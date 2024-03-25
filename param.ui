@@ -48,7 +48,7 @@
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>280</y>
+      <y>300</y>
       <width>311</width>
       <height>71</height>
      </rect>
@@ -65,6 +65,22 @@
       <width>311</width>
       <height>71</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="volumeSlider">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>260</y>
+      <width>311</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

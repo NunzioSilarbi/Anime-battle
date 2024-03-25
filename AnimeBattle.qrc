@@ -11,5 +11,11 @@
         <file>static/Music/Mass_Destruction.mp3</file>
         <file>static/Music/Get_Wild.mp3</file>
         <file>static/Music/Overdrive.mp3</file>
+        <file>static/Music/Sign.mp3</file>
+        <file>static/Music/Pegasus_Forever.mp3</file>
+        <file>static/Music/Pegasus_Fantasy.mp3</file>
+        <file>static/Music/Kaidoku_Funou.mp3</file>
+        <file>static/Music/Hyperdrive.mp3</file>
+        <file>static/Music/Bioman.mp3</file>
     </qresource>
 </RCC>

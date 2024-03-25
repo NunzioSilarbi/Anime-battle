@@ -22,7 +22,8 @@ private slots:
     void onMusicChanged(int index);
     void playMusic(const QString &musicName);
     void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
-    void goBack(); // Nouveau slot pour retourner à Animebattle
+    void goBack();
+    void adjustVolume(int volume); // Nouveau slot pour ajuster le volume
 
 private:
     Ui::Param *ui;

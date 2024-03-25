@@ -2,5 +2,14 @@
     <qresource prefix="/">
         <file>static/BG/TitleBG.png</file>
         <file>static/Ico/ABLogo.ico</file>
+        <file>static/Music/Yusha_no_fue.mp3</file>
+        <file>static/Music/Wildfire.mp3</file>
+        <file>static/Music/Tapion_Ocarina.mp3</file>
+        <file>static/Music/Struggle_of_sadness.mp3</file>
+        <file>static/Music/River_in_the_desert.mp3</file>
+        <file>static/Music/Passionate_duelist.mp3</file>
+        <file>static/Music/Mass_Destruction.mp3</file>
+        <file>static/Music/Get_Wild.mp3</file>
+        <file>static/Music/Overdrive.mp3</file>
     </qresource>
 </RCC>

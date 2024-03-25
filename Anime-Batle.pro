@@ -10,13 +10,16 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    animebattle.cpp
+    animebattle.cpp \
+    param.cpp
 
 HEADERS += \
-    animebattle.h
+    animebattle.h \
+    param.h
 
 FORMS += \
-    animebattle.ui
+    animebattle.ui \
+    param.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,3 +31,6 @@ RESOURCES += \
 
 DISTFILES += \
     TitleBG.png
+
+QT += \
+    multimedia

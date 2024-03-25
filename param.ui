@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Param</class>
+ <widget class="QWidget" name="Param">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>940</width>
+    <height>567</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AnimeBattle</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/static/BG/TitleBG.png);</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>951</width>
+     <height>631</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="button_param_back">
+    <property name="geometry">
+     <rect>
+      <x>849</x>
+      <y>0</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GO BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_music">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>180</y>
+      <width>311</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change the music</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_background">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>280</y>
+      <width>311</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change the background</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

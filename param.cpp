@@ -4,9 +4,7 @@
 #include "ui_param.h"
 #include "animebattle.h" // Incluez le fichier d'en-tête d'Animebattle si nécessaire
 
-Param::Param(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Param)
+Param::Param(QWidget *parent, QMediaPlayer *player) : QWidget(parent), ui(new Ui::Param), player(player)
 {
     ui->setupUi(this);
 
@@ -31,14 +29,6 @@ Param::Param(QWidget *parent)
     // Connectez le signal activated du QComboBox à la fonction onMusicChanged
     connect(ui->comboBox_music, QOverload<int>::of(&QComboBox::activated), this, &Param::onMusicChanged);
 
-    // Initialisez le lecteur multimédia
-    player = new QMediaPlayer(this);
-
-    // Définissez le volume initial à 50%
-    player->setVolume(50);
-
-    // Jouez automatiquement la musique "Wildfire" au lancement de l'application
-    playMusic("Struggle of sadness (YuYu akusho)");
 
     // Connectez le signal clicked du bouton "Go Back" à la fonction goBack
     connect(ui->button_param_back, &QPushButton::clicked, this, &Param::goBack);
@@ -63,8 +53,12 @@ void Param::onMusicChanged(int index)
 
 void Param::playMusic(const QString &musicName)
 {
+    player->stop();
+
     // Définissez le chemin de la musique en fonction de son nom
     QString musicFileName;
+
+    disconnect(player, &QMediaPlayer::mediaStatusChanged, this, &Param::onMediaStatusChanged);
 
     if (musicName == "Wildfire (Honkai star rail)") {
         musicFileName = "Wildfire.mp3";
@@ -98,10 +92,10 @@ void Param::playMusic(const QString &musicName)
         musicFileName = "Bioman.mp3";
     }
 
-    // Jouez la musique
+    // Jouer la nouvelle musique
     player->setMedia(QUrl("qrc:/static/Music/" + musicFileName));
 
-    // Connectez le signal endOfMedia à la fonction pour relancer la musique une fois terminée
+    // Connecter le signal endOfMedia à la fonction pour relancer la musique une fois terminée
     connect(player, &QMediaPlayer::mediaStatusChanged, this, &Param::onMediaStatusChanged);
 
     player->play();
@@ -126,6 +120,15 @@ void Param::goBack()
 
     // Fermez la fenêtre Param
     this->close();
+}
+
+void Param::resetPlayer() {
+    // Arrêter la lecture
+    player->stop();
+    player->setPosition(0);
+
+    // Vider la piste en cours
+    player->setMedia(QMediaContent());
 }
 
 void Param::adjustVolume(int volume)

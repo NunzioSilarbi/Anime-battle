@@ -15,7 +15,7 @@ class Param : public QWidget
     Q_OBJECT
 
 public:
-    Param(QWidget *parent = nullptr);
+    Param(QWidget *parent = nullptr, QMediaPlayer *player = nullptr);
     ~Param();
 
 private slots:
@@ -23,6 +23,7 @@ private slots:
     void playMusic(const QString &musicName);
     void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void goBack();
+    void resetPlayer();
     void adjustVolume(int volume); // Nouveau slot pour ajuster le volume
 
 private:

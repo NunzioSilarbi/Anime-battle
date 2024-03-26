@@ -53,12 +53,10 @@ void Param::onMusicChanged(int index)
 
 void Param::playMusic(const QString &musicName)
 {
-    player->stop();
 
     // Définissez le chemin de la musique en fonction de son nom
     QString musicFileName;
 
-    disconnect(player, &QMediaPlayer::mediaStatusChanged, this, &Param::onMediaStatusChanged);
 
     if (musicName == "Wildfire (Honkai star rail)") {
         musicFileName = "Wildfire.mp3";
@@ -120,15 +118,6 @@ void Param::goBack()
 
     // Fermez la fenêtre Param
     this->close();
-}
-
-void Param::resetPlayer() {
-    // Arrêter la lecture
-    player->stop();
-    player->setPosition(0);
-
-    // Vider la piste en cours
-    player->setMedia(QMediaContent());
 }
 
 void Param::adjustVolume(int volume)

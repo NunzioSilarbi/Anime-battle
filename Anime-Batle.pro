@@ -9,16 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    character_select.cpp \
     main.cpp \
     animebattle.cpp \
     param.cpp
 
 HEADERS += \
     animebattle.h \
+    character_select.h \
     param.h
 
 FORMS += \
     animebattle.ui \
+    character_select.ui \
     param.ui
 
 # Default rules for deployment.

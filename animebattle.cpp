@@ -44,7 +44,7 @@ void Animebattle::goToParamWindow()
     paramWindow->show();
 }
 
-void Character_select::goToCharacterSelectWindow()
+void Animebattle::goToCharacterSelectWindow()
 {
     this->close();
     Character_select *characterSelectWindow = new Character_select(nullptr);

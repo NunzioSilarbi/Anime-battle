@@ -16,6 +16,7 @@ class Animebattle : public QMainWindow
 
 private slots:
     void goToParamWindow();
+    void goToCharacterSelectWindow();
     void showEvent(QShowEvent *event) override;
 
 

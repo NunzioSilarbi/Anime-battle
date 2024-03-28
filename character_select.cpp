@@ -8,6 +8,8 @@ Character_select::Character_select(QWidget *parent)
     , ui(new Ui::Character_select)
 {
     ui->setupUi(this);
+
+    connect(ui->back_button, &QPushButton::clicked, this, &Character_select::goBack);
 }
 
 void Character_select::goBack()

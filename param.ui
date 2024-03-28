@@ -44,7 +44,7 @@
      <string>GO BACK</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_background">
+   <widget class="QComboBox" name="comboBox_background">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -53,8 +53,21 @@
       <height>71</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QLabel" name="label_image">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>300</y>
+      <width>181</width>
+      <height>131</height>
+     </rect>
+    </property>
     <property name="text">
-     <string>Change the background</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap/>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_music">

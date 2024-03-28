@@ -25,6 +25,13 @@ Param::Param(QWidget *parent, QMediaPlayer *player) : QWidget(parent), ui(new Ui
     ui->comboBox_music->addItem("Sign (Naruto Shippuden)");
     ui->comboBox_music->addItem("Bioman (Bernard Minet)");
 
+    ui->comboBox_background->addItem("Kame House (Dragon ball Z)");
+    ui->comboBox_background->addItem("Raimon (Inazuma eleven)");
+    ui->comboBox_background->addItem("Vallée de la fin (Naruto)");
+
+    ui->comboBox_background->setCurrentIndex(0);
+    changeBackground("Kame House (Dragon ball Z)");
+
 
     // Connectez le signal activated du QComboBox à la fonction onMusicChanged
     connect(ui->comboBox_music, QOverload<int>::of(&QComboBox::activated), this, &Param::onMusicChanged);
@@ -35,6 +42,9 @@ Param::Param(QWidget *parent, QMediaPlayer *player) : QWidget(parent), ui(new Ui
 
     // Connectez le signal valueChanged du curseur de volume à la fonction adjustVolume
     connect(ui->volumeSlider, &QSlider::valueChanged, this, &Param::adjustVolume);
+
+    connect(ui->comboBox_background, QOverload<const QString &>::of(&QComboBox::activated), this, &Param::changeBackground);
+
 }
 
 Param::~Param()
@@ -136,3 +146,21 @@ void Param::adjustVolume(int volume)
     // Définissez le volume du lecteur multimédia en utilisant la valeur du curseur de volume
     player->setVolume(volume);
 }
+
+void Param::changeBackground(const QString &imageName)
+{
+    QString imagePath;
+
+    if (imageName == "Kame House (Dragon ball Z)") {
+        imagePath = ":/static/BG/Kame_house.jpg";
+    } else if (imageName == "Raimon (Inazuma eleven)") {
+        imagePath = ":/static/BG/Raimon.png";
+    } else if (imageName == "Vallée de la fin (Naruto)") {
+        imagePath = ":/static/BG/Vallee_de_la_fin.png";
+    }
+
+    QPixmap image(imagePath);
+    ui->label_image->setPixmap(image.scaled(ui->label_image->size(), Qt::KeepAspectRatio));
+}
+
+

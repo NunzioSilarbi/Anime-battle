@@ -17,5 +17,8 @@
         <file>static/Music/Kaidoku_Funou.mp3</file>
         <file>static/Music/Hyperdrive.mp3</file>
         <file>static/Music/Bioman.mp3</file>
+        <file>static/BG/Kame_house.jpg</file>
+        <file>static/BG/Raimon.png</file>
+        <file>static/BG/Vallee_de_la_fin.png</file>
     </qresource>
 </RCC>

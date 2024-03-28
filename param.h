@@ -5,6 +5,8 @@
 
 #include <QWidget>
 #include <QMediaPlayer>
+#include <QFileDialog>
+#include <QInputDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Param; }
@@ -24,7 +26,8 @@ private slots:
     void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void goBack();
     void resetPlayer();
-    void adjustVolume(int volume); // Nouveau slot pour ajuster le volume
+    void adjustVolume(int volume);
+    void changeBackground(const QString &imageName);
 
 private:
     Ui::Param *ui;

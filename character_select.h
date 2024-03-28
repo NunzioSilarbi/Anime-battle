@@ -15,6 +15,9 @@ public:
     explicit Character_select(QWidget *parent = nullptr);
     ~Character_select();
 
+private slots:
+    void goBack();
+
 private:
     Ui::Character_select *ui;
 };

@@ -10,6 +10,13 @@ Character_select::Character_select(QWidget *parent)
     ui->setupUi(this);
 }
 
+void Character_select::goBack()
+{
+    Animebattle *animeBattle = new Animebattle();
+    animeBattle->show();
+    this->close();
+}
+
 Character_select::~Character_select()
 {
     delete ui;

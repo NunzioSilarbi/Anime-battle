@@ -12,17 +12,20 @@ SOURCES += \
     character_select.cpp \
     main.cpp \
     animebattle.cpp \
-    param.cpp
+    param.cpp \
+    presets.cpp
 
 HEADERS += \
     animebattle.h \
     character_select.h \
-    param.h
+    param.h \
+    presets.h
 
 FORMS += \
     animebattle.ui \
     character_select.ui \
-    param.ui
+    param.ui \
+    presets.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

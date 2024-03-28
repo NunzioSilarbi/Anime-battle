@@ -17,6 +17,7 @@ public:
 
 private slots:
     void goBack();
+    void goPresetsWindow();
 
 private:
     Ui::Character_select *ui;

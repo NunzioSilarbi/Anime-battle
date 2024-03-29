@@ -43,6 +43,9 @@
     <property name="text">
      <string>GO BACK</string>
     </property>
+    <property name="shortcut">
+     <string>Esc</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="comboBox_background">
     <property name="geometry">

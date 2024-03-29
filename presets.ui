@@ -61,6 +61,9 @@
     <property name="text">
      <string>GO BACK</string>
     </property>
+    <property name="shortcut">
+     <string>Esc</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="preset_1">
     <property name="geometry">

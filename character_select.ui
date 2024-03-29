@@ -349,8 +349,7 @@ background-origin: content;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-</string>
+     <string notr="true"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -370,6 +369,9 @@ background-origin: content;
     </property>
     <property name="text">
      <string>GO BACK</string>
+    </property>
+    <property name="shortcut">
+     <string>Esc</string>
     </property>
    </widget>
    <widget class="QPushButton" name="fight_button">

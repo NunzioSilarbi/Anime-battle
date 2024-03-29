@@ -32,6 +32,7 @@ Animebattle::Animebattle(QWidget *parent)
 
     connect(ui->button_param, &QPushButton::clicked, this, &Animebattle::goToParamWindow);
     connect(ui->button_JcIA, &QPushButton::clicked, this, &Animebattle::goToCharacterSelectWindow);
+    connect(ui->Exit, &QPushButton::clicked, this, &Animebattle::close);
 }
 
 void Animebattle::goToParamWindow()

@@ -29,6 +29,7 @@ private:
     Ui::Character_select *ui;
     int characterIds[3];
     int enemyCharacterIds[3];
+    bool characterIdsFilled;
 };
 
 #endif // CHARACTER_SELECT_H

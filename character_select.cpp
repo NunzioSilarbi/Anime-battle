@@ -14,8 +14,11 @@ Character_select::Character_select(QWidget *parent)
 {
     ui->setupUi(this);
 
+    bool characterIdsFilled = false;
+
     connect(ui->back_button, &QPushButton::clicked, this, &Character_select::goBack);
     connect(ui->presets_button, &QPushButton::clicked, this, &Character_select::goPresetsWindow);
+    ui->fight_button->setEnabled(characterIdsFilled);
     connect(ui->fight_button, &QPushButton::clicked, this, &Character_select::goFight);
 
     std::fill(std::begin(characterIds), std::end(characterIds), 0);
@@ -92,6 +95,8 @@ void Character_select::updateCharacterIds(int characterId)
             QFrame *framebis = findChild<QFrame *>(frameNamebis);
             QString imagePath = QString(":/static/BG/VS.png");
             framebis->setStyleSheet(QString("background-image: url(%1); background-repeat: no-repeat; background-position: center; background-origin: content;").arg(imagePath));
+            characterIdsFilled = true;
+            ui->fight_button->setEnabled(characterIdsFilled);
         }
     }
 
@@ -239,6 +244,8 @@ void Character_select::setPresetValues(const QVector<int> &presetValues) {
     QString imagePath = QString(":/static/BG/VS.png");
     frame->setStyleSheet(QString("background-image: url(%1); background-repeat: no-repeat; background-position: center; background-origin: content;").arg(imagePath));
     updateFrameImages();
+    characterIdsFilled = true;
+    ui->fight_button->setEnabled(characterIdsFilled);
 }
 
 

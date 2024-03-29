@@ -375,6 +375,19 @@ background-origin: content;
      <string>GO BACK</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="fight_button">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>500</y>
+      <width>150</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FIGHT</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

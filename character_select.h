@@ -21,6 +21,7 @@ private slots:
     void goPresetsWindow();
     void updateCharacterIds(int characterId);
     void updateFrameImages();
+    void goFight();
 
 
 private:

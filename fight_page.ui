@@ -22,13 +22,7 @@
      <height>567</height>
     </rect>
    </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="attack_1">
+   <widget class="QPushButton" name="attack_5">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -41,7 +35,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="attack_2">
+   <widget class="QPushButton" name="attack_6">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -54,7 +48,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="attack_3">
+   <widget class="QPushButton" name="attack_7">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -67,7 +61,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="attack_4">
+   <widget class="QPushButton" name="attack_8">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -80,7 +74,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QProgressBar" name="ennemy_pv">
+   <widget class="QProgressBar" name="ennemy_pv_2">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -98,7 +92,7 @@
      <number>24</number>
     </property>
    </widget>
-   <widget class="QProgressBar" name="ally_pv">
+   <widget class="QProgressBar" name="ally_pv_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -116,7 +110,7 @@
      <number>24</number>
     </property>
    </widget>
-   <widget class="QTimeEdit" name="timer">
+   <widget class="QTimeEdit" name="timer_2">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -131,7 +125,7 @@
      </font>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_1_ally">
+   <widget class="QPushButton" name="perso_1_ally_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -147,7 +141,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_2_ally">
+   <widget class="QPushButton" name="perso_2_ally_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -163,7 +157,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_3_ally">
+   <widget class="QPushButton" name="perso_3_ally_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -179,7 +173,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_1_ennemy">
+   <widget class="QPushButton" name="perso_1_ennemy_2">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -195,7 +189,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_2_ennemy">
+   <widget class="QPushButton" name="perso_2_ennemy_2">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -211,7 +205,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="perso_3_ennemy">
+   <widget class="QPushButton" name="perso_3_ennemy_2">
     <property name="geometry">
      <rect>
       <x>780</x>
@@ -227,7 +221,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QFrame" name="char_select_ally">
+   <widget class="QFrame" name="char_select_ally_2">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -243,7 +237,7 @@
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QFrame" name="char_select_ennemy">
+   <widget class="QFrame" name="char_select_ennemy_2">
     <property name="geometry">
      <rect>
       <x>500</x>

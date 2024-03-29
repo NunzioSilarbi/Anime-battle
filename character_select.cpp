@@ -3,6 +3,7 @@
 #include "param.h"
 #include "animebattle.h"
 #include "presets.h"
+#include "fight_page.h"
 #include <algorithm>
 #include <set> // Inclure la bibliothèque pour std::set
 #include <ctime> // Inclure la bibliothèque pour la fonction time
@@ -15,6 +16,7 @@ Character_select::Character_select(QWidget *parent)
 
     connect(ui->back_button, &QPushButton::clicked, this, &Character_select::goBack);
     connect(ui->presets_button, &QPushButton::clicked, this, &Character_select::goPresetsWindow);
+    connect(ui->fight_button, &QPushButton::clicked, this, &Character_select::goFight);
 
     std::fill(std::begin(characterIds), std::end(characterIds), 0);
     std::fill(std::begin(enemyCharacterIds), std::end(enemyCharacterIds), 0);
@@ -44,6 +46,15 @@ void Character_select::goPresetsWindow()
     presets->show();
     this->close();
 }
+
+void Character_select::goFight()
+{
+    QString backgroundImagePath = ":/static/BG/Kame_house.jpg"; // Chemin de l'image de fond
+    Fight_page *fight_page = new Fight_page(backgroundImagePath);
+    fight_page->show();
+    this->close();
+}
+
 
 void Character_select::updateCharacterIds(int characterId)
 {

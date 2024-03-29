@@ -20,5 +20,6 @@
         <file>static/BG/Kame_house.jpg</file>
         <file>static/BG/Raimon.png</file>
         <file>static/BG/Vallee_de_la_fin.png</file>
+        <file>static/Preview/Gabimaru_preview.png</file>
     </qresource>
 </RCC>

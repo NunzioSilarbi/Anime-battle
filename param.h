@@ -25,7 +25,6 @@ private slots:
     void playMusic(const QString &musicName);
     void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void goBack();
-    void resetPlayer();
     void adjustVolume(int volume);
     void changeBackground(const QString &imageName);
 

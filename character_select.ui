@@ -342,17 +342,14 @@ background-origin: content;
    <widget class="QFrame" name="vs_img">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>40</y>
-      <width>241</width>
-      <height>241</height>
+      <x>330</x>
+      <y>30</y>
+      <width>324</width>
+      <height>277</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/static/BG/VS.png);
-background-repeat: no-repeat;
-background-position: center;
-background-origin: content;
+     <string notr="true">
 </string>
     </property>
     <property name="frameShape">

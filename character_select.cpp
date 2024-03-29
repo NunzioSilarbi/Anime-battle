@@ -88,6 +88,10 @@ void Character_select::updateCharacterIds(int characterId)
                 enemyCharacterIds[i] = randomId;
                 usedIds.insert(randomId); // Ajouter le nombre aléatoire à l'ensemble des nombres déjà utilisés
             }
+            QString frameNamebis = QString("vs_img");
+            QFrame *framebis = findChild<QFrame *>(frameNamebis);
+            QString imagePath = QString(":/static/BG/VS.png");
+            framebis->setStyleSheet(QString("background-image: url(%1); background-repeat: no-repeat; background-position: center; background-origin: content;").arg(imagePath));
         }
     }
 
@@ -230,6 +234,10 @@ void Character_select::setPresetValues(const QVector<int> &presetValues) {
         enemyCharacterIds[i] = randomId;
         usedIds.insert(randomId); // Ajouter le nombre aléatoire à l'ensemble des nombres déjà utilisés
     }
+    QString frameName = QString("vs_img");
+    QFrame *frame = findChild<QFrame *>(frameName);
+    QString imagePath = QString(":/static/BG/VS.png");
+    frame->setStyleSheet(QString("background-image: url(%1); background-repeat: no-repeat; background-position: center; background-origin: content;").arg(imagePath));
     updateFrameImages();
 }
 

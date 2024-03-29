@@ -46,5 +46,6 @@
         <file>data/preset4.txt</file>
         <file>data/preset3.txt</file>
         <file>data/preset1.txt</file>
+        <file>static/BG/VS.png</file>
     </qresource>
 </RCC>

@@ -147,6 +147,13 @@
       <height>70</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Gabimaru_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
+    </property>
     <property name="text">
      <string/>
     </property>

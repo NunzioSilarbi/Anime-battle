@@ -21,5 +21,10 @@
         <file>static/BG/Raimon.png</file>
         <file>static/BG/Vallee_de_la_fin.png</file>
         <file>static/Preview/Gabimaru_preview.png</file>
+        <file>static/Preview/Dio_preview.png</file>
+        <file>static/Preview/Ryo_Kaori_preview.png</file>
+        <file>static/Preview/Milo_Preview.png</file>
+        <file>static/Preview/Kurama_preview.png</file>
+        <file>static/Preview/Goku_preview.png</file>
     </qresource>
 </RCC>

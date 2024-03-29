@@ -82,6 +82,12 @@
       <height>70</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Goku_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -95,6 +101,12 @@
       <height>70</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Kurama_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -107,6 +119,12 @@
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Milo_Preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;</string>
     </property>
     <property name="text">
      <string/>
@@ -133,6 +151,13 @@
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Dio_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -166,6 +191,12 @@ background-origin: content;
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Ryo_Kaori_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;</string>
     </property>
     <property name="text">
      <string/>

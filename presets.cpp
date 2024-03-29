@@ -64,6 +64,15 @@ Presets::Presets(QWidget *parent) : QWidget(parent), ui(new Ui::Presets) {
             }
         }
     }
+    // Connecter le signal clicked de chaque bouton preset_x à un slot correspondant
+    connect(ui->preset_1, &QPushButton::clicked, this, &Presets::loadPreset1);
+    connect(ui->preset_2, &QPushButton::clicked, this, &Presets::loadPreset2);
+    connect(ui->preset_3, &QPushButton::clicked, this, &Presets::loadPreset3);
+    connect(ui->preset_4, &QPushButton::clicked, this, &Presets::loadPreset4);
+    connect(ui->preset_5, &QPushButton::clicked, this, &Presets::loadPreset5);
+    connect(ui->preset_6, &QPushButton::clicked, this, &Presets::loadPreset6);
+    // Connectez les autres boutons de la même manière si nécessaire...
+
     connect(ui->back_button, &QPushButton::clicked, this, &Presets::goBack);
 }
 
@@ -99,6 +108,42 @@ QVector<int> Presets::readPresetFile(const QString &filename) {
     return preset;
 }
 
+void Presets::loadPreset1() {
+    QVector<int> presetValues = readPresetFile(":/data/preset1.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::loadPreset2() {
+    QVector<int> presetValues = readPresetFile(":/data/preset2.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::loadPreset3() {
+    QVector<int> presetValues = readPresetFile(":/data/preset3.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::loadPreset4() {
+    QVector<int> presetValues = readPresetFile(":/data/preset4.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::loadPreset5() {
+    QVector<int> presetValues = readPresetFile(":/data/preset5.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::loadPreset6() {
+    QVector<int> presetValues = readPresetFile(":/data/preset6.txt");
+    openCharacterSelectWithPreset(presetValues);
+}
+
+void Presets::openCharacterSelectWithPreset(const QVector<int> &presetValues) {
+    Character_select *characterSelect = new Character_select();
+    characterSelect->setPresetValues(presetValues);
+    characterSelect->show();
+    this->close();
+}
 
 void Presets::goBack() {
     Character_select *character_selected = new Character_select();

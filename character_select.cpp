@@ -208,6 +208,32 @@ void Character_select::updateFrameImages()
     }
 }
 
+void Character_select::setPresetValues(const QVector<int> &presetValues) {
+    // Assurez-vous que la taille de presetValues est au moins égale à 3
+    if (presetValues.size() < 3) {
+        qDebug() << "Erreur : La taille du vecteur de valeurs de préréglage est inférieure à 3";
+        return; // Quittez la fonction si la taille est incorrecte
+    }
+
+    // Mettez à jour les valeurs des personnages dans characterIds
+    for (int i = 0; i < 3; ++i) {
+        characterIds[i] = presetValues[i];
+    }
+
+    std::set<int> usedIds(characterIds, characterIds + 3); // Utilisez std::set pour stocker les IDs déjà utilisés
+    srand(time(nullptr)); // Initialiser le générateur de nombres aléatoires
+    for (int i = 0; i < 3; ++i) {
+        int randomId;
+        do {
+            randomId = rand() % 10 + 1; // Générer un nombre aléatoire entre 1 et 10
+        } while (usedIds.count(randomId) > 0); // Vérifier si le nombre aléatoire a déjà été utilisé
+        enemyCharacterIds[i] = randomId;
+        usedIds.insert(randomId); // Ajouter le nombre aléatoire à l'ensemble des nombres déjà utilisés
+    }
+    updateFrameImages();
+}
+
+
 
 
 Character_select::~Character_select()

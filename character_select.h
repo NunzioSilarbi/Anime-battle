@@ -15,6 +15,7 @@ class Character_select : public QWidget
 public:
     explicit Character_select(QWidget *parent = nullptr);
     ~Character_select(); // Assurez-vous que le destructeur est déclaré ici
+    void setPresetValues(const QVector<int> &presetValues);
 
 private slots:
     void goBack();

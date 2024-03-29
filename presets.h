@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <QVector>
 #include <QTextStream>
-#include "ui_presets.h" // Assurez-vous d'inclure le fichier d'en-tête généré par Qt pour votre interface utilisateur
+#include "ui_presets.h"
+#include "character_select.h" // Inclure le fichier d'en-tête de Character_select
 
 namespace Ui {
 class Presets;
@@ -22,6 +23,13 @@ private:
     Ui::Presets *ui;
 
 private slots:
+    void loadPreset1();
+    void loadPreset2();
+    void loadPreset3();
+    void loadPreset4();
+    void loadPreset5();
+    void loadPreset6();
+    void openCharacterSelectWithPreset(const QVector<int> &presetValues);
     void goBack();
 
 };

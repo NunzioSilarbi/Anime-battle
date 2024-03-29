@@ -40,5 +40,11 @@
         <file>static/Preview/Sasori_preview.png</file>
         <file>static/Preview/Raye_preview.png</file>
         <file>static/Preview/Ogami_preview.png</file>
+        <file>data/preset2.txt</file>
+        <file>data/preset6.txt</file>
+        <file>data/preset5.txt</file>
+        <file>data/preset4.txt</file>
+        <file>data/preset3.txt</file>
+        <file>data/preset1.txt</file>
     </qresource>
 </RCC>

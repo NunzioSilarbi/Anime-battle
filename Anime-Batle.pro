@@ -39,7 +39,8 @@ RESOURCES += \
     AnimeBattle.qrc
 
 DISTFILES += \
-    TitleBG.png
+    TitleBG.png \
+    preset1.txt
 
 QT += \
     multimedia

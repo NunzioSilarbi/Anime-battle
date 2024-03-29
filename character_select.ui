@@ -37,7 +37,7 @@
    <widget class="QPushButton" name="presets_button">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>790</x>
       <y>500</y>
       <width>150</width>
       <height>50</height>
@@ -56,6 +56,13 @@
       <height>70</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Ogami_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -68,6 +75,13 @@
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Raye_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -138,6 +152,13 @@ background-origin: content;</string>
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Sasori_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -210,6 +231,13 @@ background-origin: content;</string>
       <width>150</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/Preview/Yoh_preview.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -314,11 +342,18 @@ background-origin: content;</string>
    <widget class="QFrame" name="vs_img">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>120</y>
-      <width>151</width>
-      <height>151</height>
+      <x>350</x>
+      <y>40</y>
+      <width>241</width>
+      <height>241</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/static/BG/VS.png);
+background-repeat: no-repeat;
+background-position: center;
+background-origin: content;
+</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -330,7 +365,7 @@ background-origin: content;</string>
    <widget class="QPushButton" name="back_button">
     <property name="geometry">
      <rect>
-      <x>790</x>
+      <x>20</x>
       <y>500</y>
       <width>150</width>
       <height>50</height>

@@ -5,7 +5,7 @@
 #include <QVector>
 #include <QTextStream>
 #include "ui_presets.h"
-#include "character_select.h" // Inclure le fichier d'en-tête de Character_select
+#include "character_select.h"
 
 namespace Ui {
 class Presets;

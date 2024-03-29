@@ -12,7 +12,7 @@ class Fight_page : public QWidget
     Q_OBJECT
 
 public:
-    explicit Fight_page(const QString &backgroundImagePath, QWidget *parent = nullptr);
+    explicit Fight_page(const QString &backgroundImagePath, int characterIds[], int enemyCharacterIds[], QWidget *parent = nullptr);
     ~Fight_page();
 
 private:

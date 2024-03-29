@@ -5,8 +5,8 @@
 #include "presets.h"
 #include "fight_page.h"
 #include <algorithm>
-#include <set> // Inclure la bibliothèque pour std::set
-#include <ctime> // Inclure la bibliothèque pour la fonction time
+#include <set>
+#include <ctime>
 
 Character_select::Character_select(QWidget *parent)
     : QWidget(parent)
@@ -52,20 +52,17 @@ void Character_select::goPresetsWindow()
 
 void Character_select::goFight()
 {
-    QString backgroundImagePath = ":/static/BG/Kame_house.jpg"; // Chemin de l'image de fond
-    Fight_page *fight_page = new Fight_page(backgroundImagePath);
+    QString backgroundImagePath = ":/static/BG/Vallee_de_la_fin.png";
+    Fight_page *fight_page = new Fight_page(backgroundImagePath, characterIds, enemyCharacterIds);
     fight_page->show();
     this->close();
 }
 
-
 void Character_select::updateCharacterIds(int characterId)
 {
-    // Vérifiez d'abord si characterId existe déjà dans le tableau
     bool idExists = std::find(std::begin(characterIds), std::end(characterIds), characterId) != std::end(characterIds);
 
-    if (!idExists) { // Si characterId n'existe pas déjà dans le tableau
-        // Recherchez le premier emplacement vide dans le tableau characterIds
+    if (!idExists) {
         int index = -1;
         for (int i = 0; i < 3; ++i) {
             if (characterIds[i] == 0) {
@@ -74,22 +71,20 @@ void Character_select::updateCharacterIds(int characterId)
             }
         }
 
-        if (index != -1) { // Si un emplacement vide est trouvé
-            characterIds[index] = characterId; // Met à jour l'emplacement avec l'ID du personnage
+        if (index != -1) {
+            characterIds[index] = characterId;
         }
 
-        // Si le tableau characterIds est désormais plein, générez des valeurs aléatoires pour enemyCharacterIds
         if (index == 2) {
-            // Générer des valeurs aléatoires uniques entre 1 et 10 pour enemyCharacterIds
-            std::set<int> usedIds(characterIds, characterIds + 3); // Utilisez std::set pour stocker les IDs déjà utilisés
-            srand(time(nullptr)); // Initialiser le générateur de nombres aléatoires
+            std::set<int> usedIds(characterIds, characterIds + 3);
+            srand(time(nullptr));
             for (int i = 0; i < 3; ++i) {
                 int randomId;
                 do {
-                    randomId = rand() % 10 + 1; // Générer un nombre aléatoire entre 1 et 10
-                } while (usedIds.count(randomId) > 0); // Vérifier si le nombre aléatoire a déjà été utilisé
+                    randomId = rand() % 10 + 1;
+                } while (usedIds.count(randomId) > 0);
                 enemyCharacterIds[i] = randomId;
-                usedIds.insert(randomId); // Ajouter le nombre aléatoire à l'ensemble des nombres déjà utilisés
+                usedIds.insert(randomId);
             }
             QString frameNamebis = QString("vs_img");
             QFrame *framebis = findChild<QFrame *>(frameNamebis);
@@ -100,25 +95,21 @@ void Character_select::updateCharacterIds(int characterId)
         }
     }
 
-    // Mettez à jour les images des frames
     updateFrameImages();
 }
 
 void Character_select::updateFrameImages()
 {
 
-    // Afficher le contenu du tableau characterIds
     qDebug() << "Contenu du tableau characterIds :";
     for (int i = 0; i < 3; ++i) {
         qDebug() << "characterIds[" << i << "] =" << characterIds[i];
     }
 
-    // Afficher le contenu du tableau enemyCharacterIds
     qDebug() << "Contenu du tableau enemyCharacterIds :";
     for (int i = 0; i < 3; ++i) {
         qDebug() << "enemyCharacterIds[" << i << "] =" << enemyCharacterIds[i];
     }
-    // Mettre à jour les images des frames en fonction des valeurs du tableau characterIds
     for (int i = 0; i < 3; ++i) {
         QString frameName = QString("ally_char_%1").arg(i + 1);
         QFrame *frame = findChild<QFrame *>(frameName);
@@ -156,8 +147,7 @@ void Character_select::updateFrameImages()
                 imageName = "Sasori_preview.png";
                 break;
             default:
-                // Si l'ID n'est pas valide, vous pouvez définir une image par défaut ou ne rien faire
-                imageName = ""; // Pas d'image par défaut dans ce cas
+                imageName = "";
                 break;
             }
             if (!imageName.isEmpty()) {
@@ -166,8 +156,6 @@ void Character_select::updateFrameImages()
             }
         }
     }
-
-    // Mettre à jour les images des frames en fonction des valeurs du tableau enemyCharacterIds
     for (int i = 0; i < 3; ++i) {
         QString frameName = QString("ennemy_char_%1").arg(i + 1);
         QFrame *frame = findChild<QFrame *>(frameName);
@@ -205,8 +193,7 @@ void Character_select::updateFrameImages()
                 imageName = "Sasori_preview.png";
                 break;
             default:
-                // Si l'ID n'est pas valide, vous pouvez définir une image par défaut ou ne rien faire
-                imageName = ""; // Pas d'image par défaut dans ce cas
+                imageName = "";
                 break;
             }
             if (!imageName.isEmpty()) {
@@ -218,26 +205,24 @@ void Character_select::updateFrameImages()
 }
 
 void Character_select::setPresetValues(const QVector<int> &presetValues) {
-    // Assurez-vous que la taille de presetValues est au moins égale à 3
     if (presetValues.size() < 3) {
         qDebug() << "Erreur : La taille du vecteur de valeurs de préréglage est inférieure à 3";
-        return; // Quittez la fonction si la taille est incorrecte
+        return;
     }
 
-    // Mettez à jour les valeurs des personnages dans characterIds
     for (int i = 0; i < 3; ++i) {
         characterIds[i] = presetValues[i];
     }
 
-    std::set<int> usedIds(characterIds, characterIds + 3); // Utilisez std::set pour stocker les IDs déjà utilisés
-    srand(time(nullptr)); // Initialiser le générateur de nombres aléatoires
+    std::set<int> usedIds(characterIds, characterIds + 3);
+    srand(time(nullptr));
     for (int i = 0; i < 3; ++i) {
         int randomId;
         do {
-            randomId = rand() % 10 + 1; // Générer un nombre aléatoire entre 1 et 10
-        } while (usedIds.count(randomId) > 0); // Vérifier si le nombre aléatoire a déjà été utilisé
+            randomId = rand() % 10 + 1;
+        } while (usedIds.count(randomId) > 0);
         enemyCharacterIds[i] = randomId;
-        usedIds.insert(randomId); // Ajouter le nombre aléatoire à l'ensemble des nombres déjà utilisés
+        usedIds.insert(randomId);
     }
     QString frameName = QString("vs_img");
     QFrame *frame = findChild<QFrame *>(frameName);

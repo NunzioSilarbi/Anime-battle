@@ -26,16 +26,6 @@
         <file>static/Preview/Milo_Preview.png</file>
         <file>static/Preview/Kurama_preview.png</file>
         <file>static/Preview/Goku_preview.png</file>
-        <file>static/Char/Gabimaru.png</file>
-        <file>static/Char/Ryo_Kaori.png</file>
-        <file>static/Char/Milo.png</file>
-        <file>static/Char/Kurama.png</file>
-        <file>static/Char/Goku.png</file>
-        <file>static/Char/Dio_TheWorld.png</file>
-        <file>static/Char/Yoh.png</file>
-        <file>static/Char/Sasori.png</file>
-        <file>static/Char/Raye.png</file>
-        <file>static/Char/Ogami.png</file>
         <file>static/Preview/Yoh_preview.png</file>
         <file>static/Preview/Sasori_preview.png</file>
         <file>static/Preview/Raye_preview.png</file>
@@ -47,5 +37,15 @@
         <file>data/preset3.txt</file>
         <file>data/preset1.txt</file>
         <file>static/BG/VS.png</file>
+        <file>static/Char/Yoh.png</file>
+        <file>static/Char/Sasori.png</file>
+        <file>static/Char/Ryo_Kaori.png</file>
+        <file>static/Char/Ogami.png</file>
+        <file>static/Char/Milo.png</file>
+        <file>static/Char/Gabimaru.png</file>
+        <file>static/Char/Goku.png</file>
+        <file>static/Char/Kurama.png</file>
+        <file>static/Char/Dio_TheWorld.png</file>
+        <file>static/Char/Raye.png</file>
     </qresource>
 </RCC>

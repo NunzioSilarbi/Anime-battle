@@ -1,14 +1,11 @@
-// param.cpp
-
 #include "param.h"
 #include "ui_param.h"
-#include "animebattle.h" // Incluez le fichier d'en-tête d'Animebattle si nécessaire
+#include "animebattle.h"
 
 Param::Param(QWidget *parent, QMediaPlayer *player) : QWidget(parent), ui(new Ui::Param), player(player)
 {
     ui->setupUi(this);
 
-    // Ajoutez vos musiques à la liste déroulante
     ui->comboBox_music->addItem("Struggle of sadness (YuYu akusho)");
     ui->comboBox_music->addItem("Wildfire (Honkai star rail)");
     ui->comboBox_music->addItem("Mass destruction (Persona 3 reload)");
@@ -33,14 +30,11 @@ Param::Param(QWidget *parent, QMediaPlayer *player) : QWidget(parent), ui(new Ui
     changeBackground("Kame House (Dragon ball Z)");
 
 
-    // Connectez le signal activated du QComboBox à la fonction onMusicChanged
     connect(ui->comboBox_music, QOverload<int>::of(&QComboBox::activated), this, &Param::onMusicChanged);
 
 
-    // Connectez le signal clicked du bouton "Go Back" à la fonction goBack
     connect(ui->button_param_back, &QPushButton::clicked, this, &Param::goBack);
 
-    // Connectez le signal valueChanged du curseur de volume à la fonction adjustVolume
     connect(ui->volumeSlider, &QSlider::valueChanged, this, &Param::adjustVolume);
 
     connect(ui->comboBox_background, QOverload<const QString &>::of(&QComboBox::activated), this, &Param::changeBackground);
@@ -54,17 +48,14 @@ Param::~Param()
 
 void Param::onMusicChanged(int index)
 {
-    // Récupérez le nom de la musique sélectionnée
     QString musicName = ui->comboBox_music->currentText();
 
-    // Faites quelque chose avec le nom de la musique sélectionnée (par exemple, jouer la musique)
     playMusic(musicName);
 }
 
 void Param::playMusic(const QString &musicName)
 {
 
-    // Définissez le chemin de la musique en fonction de son nom
     QString musicFileName;
 
 
@@ -100,10 +91,8 @@ void Param::playMusic(const QString &musicName)
         musicFileName = "Bioman.mp3";
     }
 
-    // Jouer la nouvelle musique
     player->setMedia(QUrl("qrc:/static/Music/" + musicFileName));
 
-    // Connecter le signal endOfMedia à la fonction pour relancer la musique une fois terminée
     connect(player, &QMediaPlayer::mediaStatusChanged, this, &Param::onMediaStatusChanged);
 
     player->play();
@@ -112,7 +101,6 @@ void Param::playMusic(const QString &musicName)
 void Param::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
 {
     if (status == QMediaPlayer::EndOfMedia) {
-        // Relancer la musique
         player->setPosition(0);
         player->play();
     }
@@ -120,19 +108,15 @@ void Param::onMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
 void Param::goBack()
 {
-    // Instanciez la fenêtre Animebattle
     Animebattle *animeBattle = new Animebattle();
 
-    // Affichez la fenêtre Animebattle
     animeBattle->show();
 
-    // Fermez la fenêtre Param
     this->close();
 }
 
 void Param::adjustVolume(int volume)
 {
-    // Définissez le volume du lecteur multimédia en utilisant la valeur du curseur de volume
     player->setVolume(volume);
 }
 

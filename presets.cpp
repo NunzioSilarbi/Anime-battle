@@ -3,19 +3,17 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QLabel>
-#include "character_select.h" // Inclure le fichier d'en-tête de Character_select
+#include "character_select.h"
 
 Presets::Presets(QWidget *parent) : QWidget(parent), ui(new Ui::Presets) {
     ui->setupUi(this);
 
-    // Lire les fichiers txt et stocker les valeurs dans des tableaux
     QVector<QVector<int>> presets;
     presets.resize(6);
     for (int i = 0; i < 6; ++i) {
         presets[i] = readPresetFile(QString(":/data/preset%1.txt").arg(i + 1));
     }
 
-    // Parcourir les tableaux et afficher les images correspondantes dans les QFrames
     for (int i = 0; i < 6; ++i) {
         for (int j = 0; j < 3; ++j) {
             QFrame *frame = findChild<QFrame *>(QString("preset%1_%2").arg(i + 1).arg(j + 1));
@@ -54,7 +52,7 @@ Presets::Presets(QWidget *parent) : QWidget(parent), ui(new Ui::Presets) {
                     imageName = "Sasori_preview.png";
                     break;
                 default:
-                    imageName = ""; // Pas d'image par défaut dans ce cas
+                    imageName = "";
                     break;
                 }
                 if (!imageName.isEmpty()) {
@@ -64,14 +62,12 @@ Presets::Presets(QWidget *parent) : QWidget(parent), ui(new Ui::Presets) {
             }
         }
     }
-    // Connecter le signal clicked de chaque bouton preset_x à un slot correspondant
     connect(ui->preset_1, &QPushButton::clicked, this, &Presets::loadPreset1);
     connect(ui->preset_2, &QPushButton::clicked, this, &Presets::loadPreset2);
     connect(ui->preset_3, &QPushButton::clicked, this, &Presets::loadPreset3);
     connect(ui->preset_4, &QPushButton::clicked, this, &Presets::loadPreset4);
     connect(ui->preset_5, &QPushButton::clicked, this, &Presets::loadPreset5);
     connect(ui->preset_6, &QPushButton::clicked, this, &Presets::loadPreset6);
-    // Connectez les autres boutons de la même manière si nécessaire...
 
     connect(ui->back_button, &QPushButton::clicked, this, &Presets::goBack);
 }
@@ -99,7 +95,6 @@ QVector<int> Presets::readPresetFile(const QString &filename) {
 
     file.close();
 
-    // Imprimer le contenu du tableau dans la console
     qDebug() << "Contenu du tableau preset pour le fichier" << filename << ":";
     for (int i = 0; i < preset.size(); ++i) {
         qDebug() << preset[i];

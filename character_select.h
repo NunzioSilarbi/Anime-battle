@@ -17,6 +17,7 @@ public:
     ~Character_select(); // Assurez-vous que le destructeur est déclaré ici
     void setPresetValues(const QVector<int> &presetValues);
 
+
 private slots:
     void goBack();
     void goPresetsWindow();

@@ -2,6 +2,7 @@
 #define CHARACTER_SELECT_H
 
 #include <QWidget>
+#include <QLabel>
 
 namespace Ui {
 class Character_select;
@@ -13,14 +14,19 @@ class Character_select : public QWidget
 
 public:
     explicit Character_select(QWidget *parent = nullptr);
-    ~Character_select();
+    ~Character_select(); // Assurez-vous que le destructeur est déclaré ici
 
 private slots:
     void goBack();
     void goPresetsWindow();
+    void updateCharacterIds(int characterId);
+    void updateFrameImages();
+
 
 private:
     Ui::Character_select *ui;
+    int characterIds[3];
+    int enemyCharacterIds[3];
 };
 
 #endif // CHARACTER_SELECT_H

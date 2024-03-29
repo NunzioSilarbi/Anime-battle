@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     character_select.cpp \
+    fight_page.cpp \
     main.cpp \
     animebattle.cpp \
     param.cpp \
@@ -18,12 +19,14 @@ SOURCES += \
 HEADERS += \
     animebattle.h \
     character_select.h \
+    fight_page.h \
     param.h \
     presets.h
 
 FORMS += \
     animebattle.ui \
     character_select.ui \
+    fight_page.ui \
     param.ui \
     presets.ui
 
